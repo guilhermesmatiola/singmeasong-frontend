@@ -15,13 +15,13 @@ export default function Menu() {
         Home
       </MenuItem>
 
-      <MenuItem onClick={() => navigate("/top")}>
+      <MenuItem id="top" onClick={() => navigate("/top")}>
         <HiTrendingUp />
         Top
       </MenuItem>
 
-      <MenuItem onClick={() => navigate("/random")}>
-        <FiShuffle />
+      <MenuItem id="randomic" onClick={() => navigate("/random")}>
+        <FiShuffle  id="randomic"/>
         Random
       </MenuItem>
     </StyledMenu>
