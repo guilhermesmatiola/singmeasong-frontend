@@ -11,7 +11,7 @@ export default function Menu() {
   return (
     <StyledMenu>
       <MenuItem onClick={() => navigate("/")}>
-        <FaHome />
+        <FaHome id="home" />
         Home
       </MenuItem>
 
