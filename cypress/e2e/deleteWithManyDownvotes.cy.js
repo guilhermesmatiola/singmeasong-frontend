@@ -29,11 +29,9 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.get("#submit").click();
         cy.wait("@postRecommendation");
         cy.contains(name);
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
+        for(let i = 0; i<5; i++){
+            cy.get("#downvote").click();
+        }
         cy.contains("-5");
 		cy.get("#urlname").should("contain.text", name);
 
@@ -46,13 +44,10 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.get("#submit").click();
         cy.wait("@postRecommendation");
         cy.contains(name2);
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-
+        for(let i = 0; i<6; i++){
+            cy.get("#downvote").click();
+        }
+        
 
         cy.get("#name").type(`${name3}`);
         cy.get("#youtubeLink").type(`${youtubeLink3}`);
@@ -65,13 +60,6 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.get("#upvote").click();
         cy.get("#downvote").click();
         cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-
 
         
         cy.get("#name").type(`${name4}`);
@@ -82,13 +70,12 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.get("#submit").click();
         cy.wait("@postRecommendation");
         cy.contains(name4);
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();        
+        for(let i = 0; i<7; i++){
+            cy.get("#upvote").click();
+        }
+        for(let i = 0; i<13; i++){
+            cy.get("#downvote").click();
+        }
         cy.contains("-5");
 		cy.get("#urlname").should("contain.text", name4);
 

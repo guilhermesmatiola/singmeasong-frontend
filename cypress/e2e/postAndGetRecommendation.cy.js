@@ -28,17 +28,13 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.wait("@postRecommendation");
 
         cy.contains(name);
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
+        for(let i = 0; i<6; i++){
+            cy.get("#upvote").click();
+        }
         cy.contains("6")
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
-        cy.get("#downvote").click();
+        for(let i = 0; i<4; i++){
+            cy.get("#downvote").click();
+        }
         cy.contains("2");
 		cy.get("#urlname").should("contain.text", name);
 
@@ -51,11 +47,9 @@ describe("HomePage: test in post/recommendation and get/recommendation", () => {
         cy.get("#submit").click();
         cy.wait("@postRecommendation");
         cy.contains(name2);
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
-        cy.get("#upvote").click();
+        for(let i = 0; i<5; i++){
+            cy.get("#upvote").click();
+        }
         cy.get("#urlname").should("contain.text", name2);
 
 
